@@ -1,0 +1,24 @@
+.card {
+    border-radius: var(--radius-xl);
+    position: relative;
+    transition: all var(--transition-bounce);
+    overflow: hidden;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-glass-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.card-clickable {
+    cursor: pointer;
+}
+
+.card-clickable:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(217, 119, 87, 0.4); /* Subtle orange accent border on hover */
+    background: var(--color-bg-secondary);
+}
+
+.card-clickable:active {
+    transform: translateY(0) scale(0.98);
+}
