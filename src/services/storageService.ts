@@ -1,6 +1,6 @@
 export interface GameRecord {
   id: string;
-  game: 'schulte' | 'stroop';
+  game: 'schulte' | 'stroop' | 'memory' | 'reaction';
   score: number; // Schulte: timeMs, Stroop: points
   difficulty: string; // e.g. '5x5', '30s-4colors'
   timestamp: number;
@@ -54,11 +54,11 @@ export function getBestRecord(
   );
   if (records.length === 0) return null;
 
-  if (game === 'schulte') {
-    // Lower time is better
+  if (game === 'schulte' || game === 'reaction') {
+    // Lower time/ms is better
     return records.reduce((best, r) => (r.score < best.score ? r : best));
   }
-  // Higher score is better
+  // Higher points/level is better
   return records.reduce((best, r) => (r.score > best.score ? r : best));
 }
 

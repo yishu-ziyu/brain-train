@@ -16,7 +16,6 @@ export const MemoryGame: React.FC = () => {
     startGame,
     nextLevel,
     submitAnswer,
-    endGame,
     bestRecord,
   } = useMemoryGame();
 
